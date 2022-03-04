@@ -1,0 +1,26 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  /* background-color: #1e1e1e; */
+}
+.center-container {
+  display: flex;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031; /* High z-index so it is on top of the page */
+  top: 50%;
+  right: 50%; /* or: left: 50%; */
+  margin-top: -20px; /* half of the elements height */
+  margin-right: -20px; /* half of the elements widht */
+}
