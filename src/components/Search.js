@@ -9,30 +9,34 @@ function Search({ updatedLocation }) {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     setSearch(event.target.value);
     updatedLocation(search);
-    event.preventDefault();
+    setSearch("");
   };
   return (
-    <InputGroup className="mb-3" onSubmit={handleSubmit}>
-      <InputGroup.Text>
-        <Icon.GeoAltFill color={"#bc4f51"} />
-      </InputGroup.Text>
-      <FormControl
-        placeholder="City or Zip Code"
-        aria-label="City or Zip Code"
-        aria-describedby="basic-addon2"
-        value={search}
-        onChange={handleChange}
-      />
-      <Button
-        onClick={handleSubmit}
-        variant="outline-secondary"
-        id="button-addon2"
-      >
-        <Icon.Search className="center-button" />
-      </Button>
-    </InputGroup>
+    <form>
+      <InputGroup className="mb-3" onSubmit={handleSubmit}>
+        <InputGroup.Text>
+          <Icon.GeoAltFill color={"#bc4f51"} />
+        </InputGroup.Text>
+        <FormControl
+          placeholder="City or Zip Code"
+          aria-label="City or Zip Code"
+          aria-describedby="basic-addon2"
+          value={search}
+          onChange={handleChange}
+        />
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          variant="outline-secondary"
+          id="button-addon2"
+        >
+          <Icon.Search className="center-button" />
+        </Button>
+      </InputGroup>
+    </form>
   );
 }
 
