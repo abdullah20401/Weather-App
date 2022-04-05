@@ -29,6 +29,7 @@ function Search({ updatedLocation }) {
         />
         <Button
           onClick={handleSubmit}
+          disabled={!search}
           type="submit"
           variant="outline-secondary"
           id="button-addon2"
